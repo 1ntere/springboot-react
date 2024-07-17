@@ -2,3 +2,23 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
+<configuration>
+	<settings>
+		<!-- 
+		MyBatis에서 null 값을 처리하는 방법을 지정하는 설정
+		
+		DB나 Java에서 가져오는 값이 null일 때 이것을 어떻게 처리할 것인가?
+		value에 null을 작성하면 null이 들어갈 것이고
+		value = VARCHAR2나 int 등 특정값으로 null을 DB에 전달하겠다라는 설정
+		 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		
+		<!-- 
+		DB에 언더스코어로 작성된 값을 Java에서는 카멜케이스로 표기하겠다고 선언
+		
+		Under score	 : todo_name 과 같이 중간에 _가 들어가는 것
+		CamelCase	 : todoName과 같이 중간에 대문자가 들어가는 것
+		 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+</configuration>
