@@ -93,4 +93,12 @@ public class DBConfig {
 	public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
+	
+	/** SqlSessionTemplate와 DataSourceTransactionManager의 차이
+	 * 
+	 * SqlSessionTemplate			: insert, select, update, delete 실행
+	 * DataSourceTransactionManager	: SqlSessionTemplate의 실행 결과를 Commit 혹은 Rollback
+	 * 
+	 * 이 2가지를 통해 DB에 완벽히 저장하거나 되돌리는 작업을 진행함
+	 */
 }
