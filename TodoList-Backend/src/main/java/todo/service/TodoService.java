@@ -1,6 +1,7 @@
 package todo.service;
 
 import java.util.List;
+import java.util.Map;
 
 import todo.dto.Todo;
 import todo.dto.TodoMember;
@@ -10,9 +11,7 @@ public interface TodoService {
 	
 	int signup(TodoMember member);
 	
-	TodoMember login(TodoMember member);
-	
-	List<Todo> selectTodoList(int todoMemberNo);
+	Map<String, Object> login(TodoMember member);
 	
 	int insert(Todo todo);
 	
