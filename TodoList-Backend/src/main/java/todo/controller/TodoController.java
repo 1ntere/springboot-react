@@ -122,4 +122,9 @@ public class TodoController {
 	                       CRUD에서 Delete
 	                       Delete /user/1 = 회원정보가 1인 사용자를 삭제
 	*/
+	
+	@GetMapping("/test")
+	public int test() {
+		return 100;
+	}
 }
