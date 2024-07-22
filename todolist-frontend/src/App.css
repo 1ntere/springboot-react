@@ -1,30 +1,64 @@
-/* index.js에 root로 작성된 id style */
-#root {
+#root{
   padding: 15px;
 }
 
-.signup-wrapper {
+.signup-wrapper{
   position: relative;
 }
 
-.signup-container {
+.signup-container{
   width: 300px;
   padding: 10px;
   position: absolute;
+
   background-color: white;
   border: 3px solid #ccc;
 }
 
-.signup-container > label {
+.signup-container > label{
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
 }
 
-.signup-container > label > input {
+.signup-container > label > input{
   flex-basis: 65%;
 }
 
-.signup-container button {
+.signup-container button{
   width: 100%;
+}
+
+.id-error{
+  color: red;
+  font-weight: bold;
+}
+
+.todo-container {
+  padding:20px;
+  width: 500px;
+}
+
+.todo-container li {
+  margin-bottom: 10px;
+}
+
+.todo-container li > div {
+  display:  flex;
+  justify-content: space-between;
+}
+
+/* span 태그에서 가장 마지막에 있는 삭제 버튼에서 다음줄로 넘김처리*/
+.todo-container li > div span:last-child{
+  display: flex;
+}
+
+/* 수정 삭제 버튼 좌우 간격주기*/
+.todo-container li > div button {
+  margin: 0 5px;
+}
+
+/* 가운데 줄 긋기*/
+.todo-compleate {
+  text-decoration: line-through;
 }
