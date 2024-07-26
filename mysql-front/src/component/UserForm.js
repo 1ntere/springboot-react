@@ -8,6 +8,8 @@ const UserForm = ({addUser}) => {
         e.preventDefault();
       //e.preventDefault() : 잠시 제출을 방지
         addUser({name, email});
+        setName('');//input에 작성한 내용을 제출하면 이름을 다시 빈칸으로 만들기
+        setEmail('');//input에 작성한 내용을 제출하면 이메일을 다시 빈칸으로 만들기
     }
 
     return (
