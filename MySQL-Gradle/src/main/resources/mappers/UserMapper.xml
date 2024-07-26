@@ -3,10 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.mapper.UserMapper">
+	<!-- 불러오기 -->
 	<select id="findAll">
 		select * from user
 	</select>
 	<!--  insert delete select -->
+	<!-- 추가하기 -->
 	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		<!-- useGeneratedKeys="true" : MySQL에서 AUTO_INCREMENT 자동증가 설정을 했을 때
 		                               키 값을 자동으로 넣을 수 있도록 설정 -->
@@ -14,4 +16,14 @@
 		insert into user(name, email)
 		values(#{name}, #{email})
 	</insert>
+	<!-- 삭제하기 -->
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM USER WHERE ID = #{id}
+	</delete>
+	<!-- 수정하기 -->
+	<update id="updateUser" parameterType="User">
+		UPDATE user
+		SET name = #{name}, email = #{email}
+		WHERE id = #{id}
+	</update>
 </mapper>
