@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 /*
  * 24/07/29 리액트와 스프링
- * 
- * 
- * 
- * 
- * 
+ * OAuthController와 api url 주소가 동일해서 나타는 충돌을 막기위해 
+ * //@RequestMapping("/api") 주석을 풀어서 
+ * 모든 url 앞에 
+ * api가 붙도록 설정
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/naver")//NaverRegist와 주소 충돌을 방지하기 위해 임의로 작성
 public class NaverLoginController {
 	/*
 	@Value : 환경설정 application.properties나 config.properties에 작성한
