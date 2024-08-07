@@ -48,56 +48,112 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-          <label>제목:</label>
-          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
+      <div className='form-container'>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label>제목</label>
+              </td>
+              <td>
+                <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>내용</label>
+              </td>
+              <td>
+                <textarea value={content} onChange={(e) => setContent(e.target.value)}/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="a" className='file-label'>이미지선택
+                  <input multiple
+                        type="file"
+                        className='img-input'
+                        id="a"
+                        accept="image.*" 
+                        onChange={(e) => setFiles(e.target.files)}/>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button onClick={Java에업로드}>Submit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div>
-          <label>내용:</label>
-          <textarea value={content} onChange={(e) => setContent(e.target.value)}/>
-      </div>
-      <div>
-          <label htmlFor="a">이미지선택:</label>
-          <input multiple
-                  type="file"
-                  className='img-input'
-                  id="a"
-                  accept="image.*" 
-                  onChange={(e) => setFiles(e.target.files)}/>
-      </div>
-      <button onClick={Java에업로드}>Submit</button>
       <hr/>
       <div>
-        {posts.map(post => (
-          <div key={post.id}  >
-            <p>번호 : {post.id}</p>
-            <h2>제목 : {post.title}</h2>
-            <p>내용 : {post.content}</p>
-            {/* 
-            {post.files && post.files.map(file => (
-              <img key={file} src={file} alt='이미지'/>
+        <table className="posts-container">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+              <th>이미지</th>
+              <th>작성일자</th>
+              <th>수정버튼</th>
+            </tr>
+          </thead>
+          <tbody>
+            {posts.map(post => (
+            <tr key={post.id} className="post">
+              <td>{post.id}</td>
+              <td>{post.title}</td>
+              <td>{post.content}</td>
+              <td className="images">
+                {post.imageUrl.split(',').map(image => 
+                  <img key={image} src={`http://localhost:9008/images/${image}`} style={{width: '250px'}}/>
+                )}
+              </td>
+              <td>{post.createdAt}</td>
+              <button>이미지 수정하기</button>
+            </tr>
             ))}
+          </tbody>
+              {/* 
+              {post.files && post.files.map(file => (
+                <img key={file} src={file} alt='이미지'/>
+              ))}
 
-          //post.files && : post.files 이 존재해야만 && 뒤의 코드가 실행
-            //Array에 대한 배열이 제대로 나오지 않으면 에러가 발생할 가능성이 높음
-            //"," 를 통해 구분을 따로 설정
-            */}
+            //post.files && : post.files 이 존재해야만 && 뒤의 코드가 실행
+              //Array에 대한 배열이 제대로 나오지 않으면 에러가 발생할 가능성이 높음
+              //"," 를 통해 구분을 따로 설정
+              */}
 
-            {/*
-            DataBase에 ","를 사용해서 이미지를 여러 장 저장했기 때문에
-            "," 기준으로 이미지를 가져와야 함
-            */}
-            {post.imageUrl.split(',').map(image => 
-              <img key={image} src={`http://localhost:9008/images/${image}`} />
-            )}
-            <p>작성일자 : {post.createdAt}</p>
-            <p>-----------------------------------------------------------------------------</p>
-
-          </div>
-        ))}
+              {/*
+              DataBase에 ","를 사용해서 이미지를 여러 장 저장했기 때문에
+              "," 기준으로 이미지를 가져와야 함
+              */}
+        </table>
       </div>
     </div>
   );
 }
 
 export default App;
+
+/* <div>
+        {posts.map(post => (
+            <div key={post.id}>
+                <h2>{post.title}</h2>
+                <p>{post.content}</p>
+                <p>{post.createdAt}</p>
+                    // {post.files && post.files.map(file => (
+                        // post.files(이미지) 가 존재할 경우에만 && 뒤의 코드 실행
+                        // <img key={file} src={file} /> ))}
+                        // <img key={file} src={file} /> ))} :뒤쪽_화살표: Array 에 대한 배열이 제대로 나오지 않으면, 오류가 발생 할 가능성이 높다.
+                                                             // , 로 구분짓는 등, 이미지를 여러개 다룰 때는 쓰이지 않는 형식이다.
+                                                             // DB 에 이미지를 , 로 구분지어 여러장을 저장했기 때문에,
+                                                             // , 를 기준으로 이미지를 불러와야 한다.
+                <p>{post.imageUrl.split(',').map(image => ( // 여러개의 이미지를 , 로 구분(split)
+                        <img key={image} src={`http://localhost:9010/images/${image}`} />  :뒤쪽_화살표: 이 경로는 Java WebConfig 에서 설정해둔 주소이다.
+                    ))}</p>
+            </div>
+        ))}
+    </div> */
