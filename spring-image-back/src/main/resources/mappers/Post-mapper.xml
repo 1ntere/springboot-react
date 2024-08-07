@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kh.mapper.PostMapper">
+	<!-- select 전체 게시글 보기 SQL -->
+	<select id ="findAll" resultType="com.kh.dto.Post">
+		SELECT * FROM posts
+	</select>
+	<!-- posts 테이블에 title, content 작성 -->
+	<insert id="insertPost" parameterType="com.kh.dto.Post">
+		INSERT INTO posts (title, content, image_url)
+		VALUES (#{title}, #{content}, #{imageUrl})
+	</insert>
+</mapper>
