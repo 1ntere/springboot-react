@@ -8,7 +8,7 @@
 		SELECT * FROM user_profiles
 	</select>
 	<insert id="insertProfile" parameterType="com.kh.dto.UserProfile">
-		INSERT INTO user_profiles(username, profile_image_url)
-		VALUES(#{username}, #{profileImageUrl})
+		INSERT INTO user_profiles (username, profile_image_url)
+		VALUES (#{username}, #{profileImageUrl})
 	</insert>
 </mapper>

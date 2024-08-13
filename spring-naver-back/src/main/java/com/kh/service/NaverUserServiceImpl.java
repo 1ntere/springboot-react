@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kh.dto.User;
-import com.kh.mapper.UserMapper;
+import com.kh.dto.NaverUser;
+import com.kh.mapper.NaverUserMapper;
 
 /*
 implements로 상속을 해주는 interface 서비스는
@@ -20,32 +20,15 @@ Override를 하나라도 빼먹으면 오류가 남
 */
 @Service
 //서비스 기능을 상세하게 작성해주는 공간
-public class UserServiceImpl implements UserService {
+public class NaverUserServiceImpl implements NaverUserService {
 	@Autowired
-	UserMapper userMapper;
-	
-	/*****불러오기*****/
-	@Override
-	public List<User> findAll() {
-		return userMapper.findAll();
-	}
+	NaverUserMapper userMapper;
 	
 	/*****추가하기*****/
 	@Override
-	public void insertUser(User user) {
-		userMapper.insertUser(user);
+	public void insertNaverUser(NaverUser user) {
+		userMapper.insertNaverUser(user);
 		//★ void와 return은 공존 불가능
 	}
-	
-	/*****삭제하기*****/
-	@Override
-	public void deleteUser(int id) {
-		userMapper.deleteUser(id);
-	}
-	
-	/*****수정하기*****/
-	@Override
-	public void updateUser(User user) {
-		userMapper.updateUser(user);
-	}
+
 }

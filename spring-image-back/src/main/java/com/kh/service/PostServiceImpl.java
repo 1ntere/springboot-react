@@ -97,5 +97,13 @@ public class PostServiceImpl implements PostService {
 		post.setImageUrl(String.join(",", fileNames));
 		               //String.join(",", fileNames) : 1개의 컬럼에 ","으로 구분하여 이미지를 여러 장 넣을 수 있음
 		insertPost(post);
-	}	
+	}
+	
+	@Override
+	public void updatePost(Post post) {
+		//insertPost 그대로 쓰면 됨
+		//기존의 이미지를 지우는 방법이 추가될 것임
+		//바탕화면에 이미지가 저장된 폴더에서 기존이미지를 삭제
+		
+	}
 }

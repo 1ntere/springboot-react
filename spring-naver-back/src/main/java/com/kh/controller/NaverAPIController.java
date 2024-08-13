@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 @RequestMapping("/api")
 @RestController
-public class NaverRegistController {
+public class NaverAPIController {
 
 	@Value("${naver.client-id}")
 	private String clientId;

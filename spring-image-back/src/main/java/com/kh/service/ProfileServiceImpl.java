@@ -36,11 +36,11 @@ public class ProfileServiceImpl implements ProfileService {
 	@Override
 	public void insertProfile(UserProfile userProfile) {
 		// TODO Auto-generated method stub
-		
+		profileMapper.insertProfile(userProfile);
 	}
 	
 	@Override
-	public void uploadProfile(MultipartFile[] files, String username, String profileImageUrl) {
+	public void uploadProfile(MultipartFile[] files, String username) {
 		//폴더 존재하는지 확인 후 폴더 없으면 생성
 		//폴더도 하나의 파일이므로 File로 폴더 확인
 		//글자 이외에는 모두 File이라 생각하면 됨
@@ -52,8 +52,8 @@ public class ProfileServiceImpl implements ProfileService {
 				System.out.println("디렉토리 폴더에 대한 설정 완료!");
 				//throw new Exception("디렉토리 생성에 실패하였습니다.");
 			}
-			
 		}
+		
 		//프로필을 업데이트 하기위해 받은 이미지가 초기에는 없기 때문에 처음 이미지들의 이름은 null로 설정
 		List<String> fileNames = null;
 		
@@ -65,7 +65,6 @@ public class ProfileServiceImpl implements ProfileService {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
 			return fileName;
 		}).collect(Collectors.toList());
 		

@@ -1,0 +1,30 @@
+.profile-thumbnail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.profile-thumbnail div {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* 이미지 효과로 변하는데 걸리는 시간 */
+                       /* 0.3s : 초가 커질 수록 느리게 변함 */
+                            /* ease : 이미지 변화가 천천히 빠르게 천천히 진행됨 */
+                            /* linear : 속도가 일정하게 이미지가 변화함 */
+                            /* ease-in : 천천히 시작해서 끝으로 갈수록 빨라짐 */
+                            /* ease-out : 빠르게 시작해서 끝으로 갈수록 천천히 변화함 */
+}
+.profile-thumbnail div:hover {
+    
+    transform: scale(2);/* 이미지를 클릭했을 때 이미지 크기 설정 */
+                 /* (1.1) : 숫자가 클수록 이미지가 커짐 */
+}
+.profile-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

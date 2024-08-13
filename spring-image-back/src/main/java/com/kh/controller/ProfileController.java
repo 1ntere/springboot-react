@@ -49,12 +49,11 @@ public class ProfileController {
 			                                    @RequestParam("profileImageUrl") String profileImageUrl) {
 	*/
 	@PostMapping("/upload")
-	public ResponseEntity<String> uploadProfile(@RequestParam("files") MultipartFile[] files,
-			                                    @RequestParam("username") String username,
-			                                    @RequestParam("profileImageUrl") String profileImageUrl) {
+	public ResponseEntity<String> insertProfile(@RequestParam("files") MultipartFile[] files,
+			                                    @RequestParam("username") String username) {
 		 //ResponseEntity<String> : 보통 <String> 이면 하나하나씩 넣어주기 때문에 @RequestParam
 		
-		service.uploadProfile(files, username, profileImageUrl);
+		service.uploadProfile(files, username);
 		return ResponseEntity.ok("이미지 업로드 성공");
 	}
 }
