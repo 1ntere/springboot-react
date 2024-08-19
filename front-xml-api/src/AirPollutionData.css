@@ -1,0 +1,26 @@
+.heading {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.card {
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 250px;
+}
+.stationName {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
