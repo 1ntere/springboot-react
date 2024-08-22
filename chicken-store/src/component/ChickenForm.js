@@ -40,7 +40,6 @@ const ChickenForm = () => {
                        onChange={(e) => setPrice(e.target.value)}/>
             </label>
             <button onClick={제출버튼}>등록하기</button>
-            <button>메인으로 돌아가기</button>
         </div>
     )
 }

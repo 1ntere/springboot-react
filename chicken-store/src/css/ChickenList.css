@@ -1,0 +1,115 @@
+.chicken-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chicken-container h1 {
+    text-align: center;
+    font-size: 2.5em; /*em = 16px, 2.5em = 40px*/
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.chicken-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chicken-container li {
+    border: 1px solid #fff;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.chicken-container li span {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.chicken-container li:hover {
+    background-color: #f1f1f1;
+}
+
+.chicken-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: background-color 0.3s transform 0.3s;
+}
+.chicken-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+.chicken-name {
+    font-weight: bold;
+    font-size: 1.4em;
+    flex-basis: 25%;/*★★★기본으로 태그가 차지할 공간*/
+    color: #333;
+}
+
+.chicken-description {
+    font-size: 1.2em;
+    flex-basis: 35%;
+    color: #666;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.chicken-price {
+    font-size: 1.4em;
+    color: #28a745;
+    flex-basis: 15%;
+    text-align: right;
+}
+
+.detail-button {
+    flex-basis: 15%;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+.detail-button:hover {
+    background-color: #0056b3;
+    font-size: 1.5em;
+}
+
+
+
+/*홈페이지를 태블릿으로 볼 때 반응형 처리*/
+@media (max-width:600px) { /*태블릿 크기*/
+    .chicken-container {
+        width: 100%;
+        padding: 10px;
+    }
+    .chicken-container h1 {
+        font-size: 2em;
+    }
+    .chicken-container li {
+        flex-direction: column;
+        text-align: center;
+    }
+    /*
+    width 나 height를 px를 사용하지 않고 %를 사용하는 이유
+
+    반응형으로 맞춰주기 위해 %를 많이 사용
+    현재 창 크기에서 100%를 차지할 것인가? 80%를 차지할 것인가?
+    */
+}
