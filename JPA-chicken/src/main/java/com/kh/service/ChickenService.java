@@ -30,7 +30,25 @@ public class ChickenService {
 					.orElseThrow(() -> new RuntimeException("일치하는 정보를 찾을 수 없습니다."));
 	}
 	
+	//치킨 메뉴 수정하기
+	public Chicken updateChicken(Integer id, Chicken uc) {
+		                       //Integer id : 수정할 컬럼 아이디
+                                   		   //Chicken uc : 수정할 내용, 저장할 치킨 객체
+		Chicken chicken = chickenRepository.findById(id)
+				          .orElseThrow(() -> new RuntimeException("치킨을 찾을 수 없습니다."));
+			//findById를 작성해줄 때는 아이디를 찾지 못할 예외 사항을 필수로 작성해줘야 함
+				//.orElseThrow() : 예외사항 작성
+		chicken.setChickenName(uc.getChickenName());
+			//치킨 객체에 수정된 치킨 이름을 가져와서 넣어주기
+		chicken.setDescription(uc.getDescription());
+		chicken.setPrice(uc.getPrice());
+		return chickenRepository.save(chicken);
+	}
 	
-	
-	
+	//치킨 메뉴 삭제하기
+	public void deleteChicken(Integer id) {
+		Chicken c = chickenRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("일치하는 정보를 찾을 수 없습니다."));
+		chickenRepository.delete(c);
+	}
 }
