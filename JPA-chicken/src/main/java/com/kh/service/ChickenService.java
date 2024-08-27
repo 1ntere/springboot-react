@@ -51,4 +51,9 @@ public class ChickenService {
 				.orElseThrow(() -> new RuntimeException("일치하는 정보를 찾을 수 없습니다."));
 		chickenRepository.delete(c);
 	}
+	
+	// 치킨 검색 기능 추가
+	public List<Chicken> searchChickens(String query) {
+		return chickenRepository.findByChickenNameContainingIgnoreCase(query);
+	}
 }

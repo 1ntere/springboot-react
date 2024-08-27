@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kh.dto.Chicken;
@@ -51,6 +52,12 @@ public class ChickenController {
 	@DeleteMapping("{id}")
 	public void deleteChicken(@PathVariable("id") Integer id) {
 		chickenService.deleteChicken(id);
+	}
+	
+	//검색기능 GET
+	@GetMapping("/search")
+	public List<Chicken> searchChickens(@RequestParam("query") String query) {
+		return chickenService.searchChickens(query);
 	}
 	
 }
