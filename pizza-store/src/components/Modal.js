@@ -1,3 +1,4 @@
+import '../css/PizzaRouter.css';
 /*
 is = 주로 true 인지 false 인지 를 나타낼 때 많이 사용
 
@@ -14,14 +15,11 @@ const Modal = ({isOpen, onClose, children}) => {
         return null; // 다시 돌려보내기를 이용해서 화면에 들어가기 버튼이 보이지 않도록 설정하는 트릭
     }
     return (
-        <div>
-            <div>
-                <button onClick={onClose}>
-                    들어가기
-                </button>
-                {children}
-            </div>
-
+        <div className='modal-container'>
+            <button onClick={onClose}>
+                &times;
+            </button>
+            {children}
         </div>
     )
 }

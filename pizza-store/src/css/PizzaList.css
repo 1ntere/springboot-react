@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pizza-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-container h1 { 
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    /*color: #ff4500;*/
+    /*background: linear-gradient(to right, red, orange, yellow, green, blue, navy, purple);*/
+    /*background: linear-gradient(to right, red, orange, yellow);*/
+    background: linear-gradient(to left, #F3E37C, #F3D34A, #EEA243, #F3A738, #F1D9A7);
+    -webkit-background-clip: text;/*Gradient가 text에만 적용될 수 있도록 설정*/
+    -webkit-text-fill-color: transparent;/*기존의 글자 색 빼기 like 탈색*/
+
+    /*최신 웹 브라우저에서 색상이 적용될 수 있도록 최신 설정*/
+    background-clip: text;
+    color: transparent;
+}
+
+.pizza-container ul {
+    list-style: none;
+}
+
+.pizza-container li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.pizza-container li:hover {
+    transform: translateY(10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pizza-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+.pizza-description {
+    font-size: 16px;
+    color: #ff4500;
+    margin: 10px 0;
+}
+.pizza-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+.pizza-container button {
+    padding: 10px 20px;
+    background-color: #daa491;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3 ease;
+}
+/* :hover = 마우스가 올라가있을 때 발생하는 상태 */
+.pizza-container button:hover {
+    background-color: #e63900;
+}
+/* :focus = 키보드가 해당 버튼에 있을 때 발생하는 상태
+            tab키를 눌러서 확인하기 */
+.pizza-container button:focus {
+    outline: none;/* tab을 눌렀을 때 나오는 검정색 혹은 파란색 테두리를 없애줌 */
+    background-color: #e63900;
+}

@@ -1,0 +1,57 @@
+.app-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-container h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 서치 컨테이너 모두 한 줄에 나란히 오게 설정 */
+.search-container {
+    display: flex;
+    justify-content: space-between;/*최대한 서로 한 줄에서 멀리 설정*/
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 70%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+/* :focus = input은 키보드로 입력하기 때문에 focus*/
+.search-container input:focus {
+    border-color: #ff4500;
+}
+
+.search-container button,
+.app-container button {
+    padding: 10px 20px;
+    background-color: #daa491;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.search-container button:hover,
+.app-container button:hover {
+    background-color: #ff4500;
+}
+
+.modal-container button {
+    background-color: #ff5733;
+    padding: 5px 10px;
+}

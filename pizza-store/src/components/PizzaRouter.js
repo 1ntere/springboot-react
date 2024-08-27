@@ -4,6 +4,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import PizzaForm from "./PizzaForm";
 import { useNavigate } from "react-router-dom";
+import '../css/PizzaRouter.css';
 
 const PizzaRouter = () => {
     /* 모달 관련 변수와 기능들 */
